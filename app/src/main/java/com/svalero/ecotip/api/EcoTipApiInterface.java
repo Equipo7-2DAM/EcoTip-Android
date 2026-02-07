@@ -2,6 +2,7 @@ package com.svalero.ecotip.api;
 
 import com.svalero.ecotip.domain.Animal;
 import com.svalero.ecotip.domain.Ecosistema;
+import com.svalero.ecotip.domain.Usuario;
 
 import java.util.List;
 
@@ -44,4 +45,19 @@ public interface EcoTipApiInterface {
 
     @DELETE("animales/{id}")
     Call<Animal> deleteAnimal(@Path("id") long id);
+
+    @GET("usuarios")
+    Call<List<Usuario>> getUsuarios();
+
+    @GET("usuarios/{id}")
+    Call<Usuario> getUsuario(@Path("id") long id);
+
+    @POST("usuarios")
+    Call<Usuario> registerUsuario(@Body Usuario usuario);
+
+    @PUT("usuarios/{id}")
+    Call<Usuario> modifyUsuario(@Path("id") long id, @Body Usuario usuario);
+
+    @DELETE("usuarios/{id}")
+    Call<Usuario> deleteUsuario(@Path("id") long id);
 }

@@ -2,8 +2,11 @@ package com.svalero.ecotip.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -92,5 +95,23 @@ public class AnimalListView extends AppCompatActivity implements AnimalListContr
                 )
                 .setNegativeButton("Cancel", null)
                 .show();
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mainmenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.menu_animales_list){
+            Intent intent = new Intent(this, EcosistemaListView.class);
+            startActivity(intent);
+            return  true;
+        }
+
+        return false;
     }
 }

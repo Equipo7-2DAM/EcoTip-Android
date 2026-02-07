@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/animal_nombre"
+            android:id="@+id/ecosistema_nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -32,28 +32,25 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/animal_especie"
+                android:id="@+id/ecosistema_descripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/animal_peso"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
         </LinearLayout>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/action_delete_animal"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            style="@style/Widget.Material3.Button.IconButton"
-            app:icon="@android:drawable/ic_menu_delete"
-            app:iconTint="#F44336"
-            app:iconSize="24dp"
-            android:layout_marginEnd="8dp"
-            app:backgroundTint="@android:color/transparent"
-            app:rippleColor="#FFCDD2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
     </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/action_delete_ecosistema"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:backgroundTint="@android:color/transparent"
+        app:icon="@android:drawable/ic_menu_delete"
+        app:iconSize="24dp"
+        app:iconTint="#F44336"
+        app:rippleColor="#FFCDD2"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="21dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

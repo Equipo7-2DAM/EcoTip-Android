@@ -15,17 +15,19 @@ public class Usuario {
     private String dni;
     private String email;
     private boolean colaborador;
+    private float donativo;
     private LocalDate fechaNacimiento;
     private List<Animal> animales;
 
     public Usuario(long id, String nombre, String apellidos, String dni,
-                   String email, boolean colaborador, LocalDate fechaNacimiento, List<Animal> animales){
+                   String email, boolean colaborador, float donativo, LocalDate fechaNacimiento, List<Animal> animales){
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.dni = dni;
         this.email = email;
         this.colaborador = colaborador;
+        this.donativo = donativo;
         this.fechaNacimiento = fechaNacimiento;
         this.animales = animales;
     }

@@ -1,6 +1,10 @@
 package com.svalero.ecotip.contract;
 
 import com.svalero.ecotip.domain.Animal;
+import com.svalero.ecotip.domain.Ecosistema;
+import com.svalero.ecotip.domain.Usuario;
+
+import java.util.List;
 
 public interface DetailAnimalContract {
 
@@ -22,6 +26,10 @@ public interface DetailAnimalContract {
         void showError(String message);
         void showMessage(String message);
         void onAnimalDeleted();
+
+        void showEcosistema(Ecosistema eco);
+
+        void showUsuario(List<Usuario> usu);
     }
     interface Presenter {
         void loadAnimal(long id);

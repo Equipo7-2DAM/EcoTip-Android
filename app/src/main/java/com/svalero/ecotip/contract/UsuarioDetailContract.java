@@ -1,6 +1,9 @@
 package com.svalero.ecotip.contract;
 
+import com.svalero.ecotip.domain.Animal;
 import com.svalero.ecotip.domain.Usuario;
+
+import java.util.List;
 
 public interface UsuarioDetailContract {
     interface Model {
@@ -21,6 +24,8 @@ public interface UsuarioDetailContract {
         void showError(String message);
         void showMessage(String message);
         void onUsuarioDeleted();
+
+        void showAnimales(List<Animal> ani);
     }
     interface Presenter {
         void loadUsuario(long id);

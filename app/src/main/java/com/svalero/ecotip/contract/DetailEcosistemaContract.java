@@ -1,6 +1,9 @@
 package com.svalero.ecotip.contract;
 
+import com.svalero.ecotip.domain.Animal;
 import com.svalero.ecotip.domain.Ecosistema;
+
+import java.util.List;
 
 public interface DetailEcosistemaContract {
 
@@ -22,6 +25,8 @@ public interface DetailEcosistemaContract {
         void showError(String message);
         void showMessage(String message);
         void onEcosistemaDeleted();
+
+        void showAnimales(List<Animal> ani);
     }
     interface Presenter {
         void loadEcosistema(long id);

@@ -100,7 +100,7 @@ public class AnimalListView extends AppCompatActivity implements AnimalListContr
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.mainmenu, menu);
+        getMenuInflater().inflate(R.menu.mainmenuanimal, menu);
         return true;
     }
 
@@ -108,6 +108,11 @@ public class AnimalListView extends AppCompatActivity implements AnimalListContr
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.menu_animales_list){
             Intent intent = new Intent(this, EcosistemaListView.class);
+            startActivity(intent);
+            return  true;
+        }
+        if (item.getItemId() == R.id.menu_usuario_list){
+            Intent intent = new Intent(this, UsuarioListView.class);
             startActivity(intent);
             return  true;
         }

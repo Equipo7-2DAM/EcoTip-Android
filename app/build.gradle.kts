@@ -41,6 +41,7 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation("androidx.room:room-runtime:2.8.2")
+    implementation(libs.recyclerview)
     annotationProcessor("androidx.room:room-compiler:2.8.2")
     compileOnly("org.projectlombok:lombok:1.18.42")
     annotationProcessor("org.projectlombok:lombok:1.18.42")

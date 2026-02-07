@@ -1,5 +1,8 @@
 package com.svalero.ecotip.api;
 
+import com.svalero.ecotip.domain.Animal;
+import com.svalero.ecotip.domain.Ecosistema;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -28,7 +31,7 @@ public interface EcoTipApiInterface {
     Call<Ecosistema> deleteEcosistema(@Path("id") long id);
 
     @GET("animales")
-    Call<List<Animal>> getAnimal();
+    Call<List<Animal>> getAnimales();
 
     @GET("animales/{id}")
     Call<Animal> getAnimal(@Path("id") long id);

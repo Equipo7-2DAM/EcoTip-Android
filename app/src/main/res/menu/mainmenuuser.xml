@@ -4,9 +4,9 @@
 
     <item
         android:id="@+id/menu_usuario_list"
-        android:title="User list" />
+        android:title="Animal list" />
     <item
         android:id="@+id/menu_animales_list"
         android:icon="@android:drawable/ic_menu_view"
-        android:title="Animal list" />
+        android:title="Ecosystem list" />
 </menu>

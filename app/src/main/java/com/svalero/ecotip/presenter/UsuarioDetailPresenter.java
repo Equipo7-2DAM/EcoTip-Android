@@ -2,10 +2,13 @@ package com.svalero.ecotip.presenter;
 
 import com.svalero.ecotip.contract.DetailEcosistemaContract;
 import com.svalero.ecotip.contract.UsuarioDetailContract;
+import com.svalero.ecotip.domain.Animal;
 import com.svalero.ecotip.domain.Ecosistema;
 import com.svalero.ecotip.domain.Usuario;
 import com.svalero.ecotip.model.DetailEcosistemaModel;
 import com.svalero.ecotip.model.UsuarioDetailModel;
+
+import java.util.List;
 
 public class UsuarioDetailPresenter implements UsuarioDetailContract.Presenter, UsuarioDetailContract.Model.OnDeleteListener, UsuarioDetailContract.Model.OnLoadListener {
     private UsuarioDetailContract.Model model;
@@ -18,6 +21,12 @@ public class UsuarioDetailPresenter implements UsuarioDetailContract.Presenter, 
 
     @Override
     public void onLoadSuccess(Usuario usuario) {
+        List<Animal> ani = usuario.getAnimales();
+        if(ani != null){
+            view.showAnimales(ani);
+        }else {
+            view.showAnimales(null);
+        }
         view.showUsuario(usuario);
         view.showMessage("Loaded.");
     }

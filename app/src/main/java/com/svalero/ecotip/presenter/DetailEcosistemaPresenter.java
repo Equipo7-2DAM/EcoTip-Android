@@ -4,8 +4,11 @@ import com.svalero.ecotip.contract.DetailAnimalContract;
 import com.svalero.ecotip.contract.DetailEcosistemaContract;
 import com.svalero.ecotip.domain.Animal;
 import com.svalero.ecotip.domain.Ecosistema;
+import com.svalero.ecotip.domain.Usuario;
 import com.svalero.ecotip.model.DetailAnimalModel;
 import com.svalero.ecotip.model.DetailEcosistemaModel;
+
+import java.util.List;
 
 public class DetailEcosistemaPresenter implements DetailEcosistemaContract.Presenter, DetailEcosistemaContract.Model.OnDeleteListener, DetailEcosistemaContract.Model.OnLoadListener {
     private DetailEcosistemaContract.Model model;
@@ -18,6 +21,12 @@ public class DetailEcosistemaPresenter implements DetailEcosistemaContract.Prese
 
     @Override
     public void onLoadSuccess(Ecosistema ecosistema) {
+        List<Animal> ani = ecosistema.getAnimales();
+        if(ani != null){
+            view.showAnimales(ani);
+        }else {
+            view.showAnimales(null);
+        }
         view.showEcosistema(ecosistema);
         view.showMessage("Loaded.");
     }

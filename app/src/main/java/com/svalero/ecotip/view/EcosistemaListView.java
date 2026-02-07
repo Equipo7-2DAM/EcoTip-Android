@@ -52,6 +52,9 @@ public class EcosistemaListView extends AppCompatActivity implements EcosistemaL
         ecosistemaAdapter = new EcosistemaAdapter(ecosistemaList, listener);
         ecosistemaListView.setAdapter(ecosistemaAdapter);
     }
+    @Override protected void onResume() {
+        super.onResume();
+        presenter.loadEcosistemas(); }
     @Override
     public void show(List<Ecosistema> ecosistemas) {
 
@@ -107,6 +110,11 @@ public class EcosistemaListView extends AppCompatActivity implements EcosistemaL
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.menu_animales_list){
             Intent intent = new Intent(this, AnimalListView.class);
+            startActivity(intent);
+            return  true;
+        }
+        if (item.getItemId() == R.id.menu_usuario_list){
+            Intent intent = new Intent(this, UsuarioListView.class);
             startActivity(intent);
             return  true;
         }
